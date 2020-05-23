@@ -6,12 +6,9 @@ const goodContextDefault = {};
 const GoodContext = createContext({});
 
 export const WorkingContext = () => (
-  <div>
-    <p>As you can see, the messages are rendered below</p>
-    <GoodContext.Provider value={useReducer(reducer, goodContextDefault)}>
-      <Wrapper context={GoodContext}>
-        <ContextMessage context={GoodContext} />
-      </Wrapper>
-    </GoodContext.Provider>
-  </div>
+  <GoodContext.Provider value={useReducer(reducer, goodContextDefault)}>
+    <Wrapper>
+      <ContextMessage context={GoodContext} />
+    </Wrapper>
+  </GoodContext.Provider>
 );

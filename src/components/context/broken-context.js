@@ -7,7 +7,7 @@ const BadContext = createContext({});
 
 const Abstraction = ({ reducer, defaultState, children }) => (
   <BadContext.Provider value={useReducer(reducer, defaultState)}>
-    <Wrapper context={BadContext}>{children}</Wrapper>
+    <Wrapper>{children}</Wrapper>
   </BadContext.Provider>
 );
 

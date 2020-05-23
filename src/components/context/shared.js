@@ -9,8 +9,6 @@ export const reducer = (state, action) => {
   const newState =
     action.type === "setMessage"
       ? { ...state, innerMessage: action.payload }
-      : action.type === "activate"
-      ? { ...state, active: true }
       : state;
   console.log("new state", newState);
   console.groupEnd();
@@ -42,18 +40,13 @@ export const ContextMessage = ({ context }) => {
   );
 };
 
-export const Wrapper = ({ context, children }) => {
-  const [{ active }, dispatch] = useContext(context);
+export const Wrapper = ({ children }) => {
   console.log("rendering Wrapper");
-  useEffect(() => {
-    dispatch({ type: "activate" });
-  }, []);
+
   return (
-    active && (
-      <div>
-        <h2>Wrapper Component</h2>
-        <div>{children}</div>
-      </div>
-    )
+    <div>
+      <h2>Wrapper Component</h2>
+      <div>{children}</div>
+    </div>
   );
 };
