@@ -29,7 +29,7 @@
     "sirv-cli": "^0.4.5"
   },
   "dependencies": {
-    "preact": "^10.3.2",
+    "preact": "^10.4.4",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
     "redux-actions": "^2.6.5"
